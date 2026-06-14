@@ -27,6 +27,10 @@ public class Contract {
     @JoinColumn(name = "vehicle_vin")
     private Vehicle vehicle;
 
+    @Enumerated
+    @Column(nullable = false)
+    private ContractType type;
+
     @NotBlank(message = "Customer Name is Required")
     @Column(nullable = false, length = 1000)
     private String customerName;
