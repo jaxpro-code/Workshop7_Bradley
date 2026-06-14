@@ -2,6 +2,7 @@ package com.example.vehicle_dealership.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -43,9 +44,10 @@ public class Vehicle {
     @Column(nullable = false, length = 100)
     private String color;
 
-    @NotBlank(message = "Vehicle Type is required")
-    @Column(nullable = false, length = 1000)
-    private String vehicleType;
+    @NotNull(message = "Vehicle Type is required")
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private VehicleType vehicleType;
 
     @Positive(message = "Odometer must be a positive number")
     @Column(nullable = false,length = 1000000)

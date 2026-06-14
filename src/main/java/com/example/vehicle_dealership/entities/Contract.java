@@ -27,7 +27,7 @@ public class Contract {
     @JoinColumn(name = "vehicle_vin")
     private Vehicle vehicle;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ContractType type;
 
