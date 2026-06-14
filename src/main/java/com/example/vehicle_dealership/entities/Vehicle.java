@@ -1,0 +1,59 @@
+package com.example.vehicle_dealership.entities;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name = "vehicle")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Vehicle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @NotBlank(message = "Vin is Required")
+    @Column(nullable = false, length = 17)
+    private int vin;
+
+    @NotBlank(message = "Year is required")
+    @Size(min = 1886, max = 2028, message = "Year must be between 1886 and 2028")
+    @Column(nullable = false, length = 4)
+    private int year;
+
+    @NotBlank(message = "Make is required")
+    @Column(nullable = false, length = 100)
+    private String make;
+
+    @NotBlank(message = "Model is required")
+    @Column(nullable = false, length = 100)
+    private String model;
+
+    @NotBlank(message = "Color is required")
+    @Column(nullable = false, length = 100)
+    private String color;
+
+    @NotBlank(message = "Vehicle Type is required")
+    @Column(nullable = false, length = 1000)
+    private String vehicleType;
+
+    @Positive(message = "Odometer must be a positive number")
+    @Column(nullable = false,length = 1000000)
+    private int odometer;
+
+    @Positive(message = "Price must be a positive number")
+    @Column(nullable = false, length = 1000000)
+    private double price;
+
+    @ManyToOne
+    @JoinColumn(name = "dealership_id")
+    private Dealerships dealership;
+}
