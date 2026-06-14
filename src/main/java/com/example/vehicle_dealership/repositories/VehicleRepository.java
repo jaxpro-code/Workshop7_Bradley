@@ -32,5 +32,7 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
     //by type
     List<Vehicle> findByTypeIgnoreCase(String type);
 
+    //by dealership
+    List<Vehicle> findByDealershipId(Long id);
 
 }
