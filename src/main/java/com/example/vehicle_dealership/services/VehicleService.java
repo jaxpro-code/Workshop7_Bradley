@@ -1,6 +1,7 @@
 package com.example.vehicle_dealership.services;
 
 import com.example.vehicle_dealership.entities.Vehicle;
+import com.example.vehicle_dealership.entities.enums.VehicleType;
 import com.example.vehicle_dealership.repositories.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,7 +44,7 @@ public class VehicleService {
         vehicleToUpdate.setModel(vehicle.getModel());
         vehicleToUpdate.setColor(vehicle.getColor());
         vehicleToUpdate.setVehicleType(vehicle.getVehicleType());
-        vehicleToUpdate.setOdometer(vehicle.getOdometer());
+        vehicleToUpdate.setMiles(vehicle.getMiles());
         vehicleToUpdate.setPrice(vehicle.getPrice());
 
         vehicleRepository.save(vehicleToUpdate);
@@ -113,8 +114,8 @@ public class VehicleService {
     }
 
     //by type
-    public List<Vehicle> byType(String type){
-        List<Vehicle> vehicles = vehicleRepository.findByTypeIgnoreCase(type);
+    public List<Vehicle> byType(VehicleType type){
+        List<Vehicle> vehicles = vehicleRepository.findByVehicleTypeIgnoreCase(type);
 
         return vehicles;
     }

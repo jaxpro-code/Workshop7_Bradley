@@ -52,7 +52,7 @@ public class Vehicle {
 
     @Positive(message = "Odometer must be a positive number")
     @Column(nullable = false,length = 1000000)
-    private int odometer;
+    private int miles;
 
     @Positive(message = "Price must be a positive number")
     @Column(nullable = false, length = 1000000)

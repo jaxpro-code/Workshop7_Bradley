@@ -11,5 +11,5 @@ public interface DealershipRepository extends JpaRepository<Dealerships, Long> {
     //provided crud, create a delership, update a dealership, find by id, find all,delete by id, delete dealership, check existance
 
     //by name
-    List<Dealerships> findByDealershipNameIgnoreCase(String name);
+    List<Dealerships> findByNameIgnoreCase(String name);
 }

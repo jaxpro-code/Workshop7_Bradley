@@ -1,6 +1,7 @@
 package com.example.vehicle_dealership.repositories;
 
 import com.example.vehicle_dealership.entities.Vehicle;
+import com.example.vehicle_dealership.entities.enums.VehicleType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -29,8 +30,8 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
     //by miles
     List<Vehicle> findByMilesBetween(Integer min, Integer max);
 
-    //by type
-    List<Vehicle> findByTypeIgnoreCase(String type);
+    //by vehicleType
+    List<Vehicle> findByVehicleTypeIgnoreCase(VehicleType vehicleType);
 
     //by dealership
     List<Vehicle> findByDealershipId(Long id);
