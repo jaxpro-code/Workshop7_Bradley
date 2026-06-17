@@ -24,7 +24,7 @@ public class Contract {
     @Column(nullable = false,length = 10)
     private String date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vehicle_id")
     private Vehicle vehicle;
 

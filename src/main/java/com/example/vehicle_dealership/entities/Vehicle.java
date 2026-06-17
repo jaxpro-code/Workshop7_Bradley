@@ -58,11 +58,11 @@ public class Vehicle {
     @Column(nullable = false, length = 10)
     private double price;
 
-    @ManyToOne
-    @JoinColumn(name = "dealership_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dealership_id",nullable = false,unique = true)
     private Dealerships dealership;
 
-    @OneToMany(mappedBy = "vehicle")
+    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     private List<Contract> contracts;
 }
 

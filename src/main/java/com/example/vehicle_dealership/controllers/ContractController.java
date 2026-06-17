@@ -67,11 +67,11 @@ public class ContractController {
 
     //by id
     @GetMapping("/{id}")
-    public ResponseEntity<Contract> getContractById(@PathVariable Long id){
+    public ResponseEntity<Optional<Contract>> getContractById(@PathVariable Long id){
         Optional<Contract> contracts = this.contractService.byId(id);
 
         if(contracts.isPresent()){
-            return new ResponseEntity<>(contracts.get(), HttpStatus.OK);
+            return new ResponseEntity<>(contracts, HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
