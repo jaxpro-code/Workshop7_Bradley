@@ -26,7 +26,7 @@ public class Vehicle {
 
     @NotBlank(message = "Vin is Required")
     @Column(nullable = false, length = 17)
-    private int vin;
+    private String vin;
 
     @NotBlank(message = "Year is required")
     @Size(min = 1886, max = 2028, message = "Year must be between 1886 and 2028")
@@ -51,11 +51,11 @@ public class Vehicle {
     private VehicleType vehicleType;
 
     @Positive(message = "Odometer must be a positive number")
-    @Column(nullable = false,length = 1000000)
+    @Column(nullable = false,length = 10)
     private int miles;
 
     @Positive(message = "Price must be a positive number")
-    @Column(nullable = false, length = 1000000)
+    @Column(nullable = false, length = 10)
     private double price;
 
     @ManyToOne
