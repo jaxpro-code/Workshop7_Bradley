@@ -1,13 +1,11 @@
 package com.example.vehicle_dealership.services;
 
 import com.example.vehicle_dealership.entities.Contract;
-import com.example.vehicle_dealership.entities.Dealerships;
 import com.example.vehicle_dealership.entities.enums.ContractType;
 import com.example.vehicle_dealership.repositories.ContractRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -69,7 +67,7 @@ public class ContractService {
 
     //by contract type
     public List<Contract> byType(ContractType type){
-        List<Contract> contracts = contractRepository.findByTypeIgnoreCase(type);
+        List<Contract> contracts = contractRepository.findByType(type);
 
         return contracts;
     }

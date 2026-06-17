@@ -12,7 +12,7 @@ public interface ContractRepository extends JpaRepository<Contract, Long> {
     //provided crud, create a contract, update a contract, find by id, find all, delete by id, delete contract, check existance
 
     //by type
-    List<Contract> findByTypeIgnoreCase(ContractType type);
+    List<Contract> findByType(ContractType type);
 
     //by vin
     List<Contract> findByVehicleVinContainingIgnoreCase(String vin);

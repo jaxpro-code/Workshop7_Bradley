@@ -82,7 +82,16 @@ public class ContractController {
     //by contract type
     @GetMapping("/by-type")
     public ResponseEntity<List<Contract>> getContractByType (@RequestParam (value = "type") ContractType type){
-        List<Contract> contracts = this.contractService.byType(type);
+        ContractType enumType;
+
+        try{
+            enumType = ContractType.valueOf(type.toString().toUpperCase());
+        }
+        catch (IllegalArgumentException e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        List<Contract> contracts = this.contractService.byType(enumType);
 
         if(contracts.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
