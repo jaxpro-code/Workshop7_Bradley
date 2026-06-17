@@ -88,85 +88,16 @@ collection:
     meta:
       id: fld_192595b1058c44d5bc6eb62877bfebaa
       created: 1781698689892
-      modified: 1781698689892
+      modified: 1781699793196
       sortKey: -1781698689892
       description: ""
     children:
-      - url: ""
-        name: New Request
-        meta:
-          id: req_7632e746ce3248e18fdebd0d5a9e7660
-          created: 1781698736244
-          modified: 1781698736244
-          isPrivate: false
-          description: ""
-          sortKey: -1781698736244
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/12.6.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: ""
-        name: New Request
-        meta:
-          id: req_1b14f580cc794c0eaf756aa1db87f3f7
-          created: 1781698738968
-          modified: 1781698738968
-          isPrivate: false
-          description: ""
-          sortKey: -1781698738968
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/12.6.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: ""
-        name: New Request
-        meta:
-          id: req_2a01b2ffabda40278c4c4505f0a1966d
-          created: 1781698745588
-          modified: 1781698745588
-          isPrivate: false
-          description: ""
-          sortKey: -1781698745588
-        method: GET
-        headers:
-          - name: User-Agent
-            value: insomnia/12.6.0
-            description: ""
-            disabled: false
-        settings:
-          renderRequestBody: true
-          encodeUrl: true
-          followRedirects: global
-          cookies:
-            send: true
-            store: true
-          rebuildPath: true
-      - url: ""
+      - url: http://localhost:8080/api/dealerships
         name: New Request
         meta:
           id: req_c2f372b12eab47cc968e4c4f1098842c
           created: 1781698747671
-          modified: 1781698747671
+          modified: 1781699906875
           isPrivate: false
           description: ""
           sortKey: -1781698747671
@@ -208,11 +139,11 @@ collection:
             store: true
           rebuildPath: true
       - url: ""
-        name: New Request
+        name: "All Dealerships -- unkown error "
         meta:
           id: req_9f676ee266be426699a0d52a3e7c9e56
           created: 1781698751074
-          modified: 1781698751074
+          modified: 1781700123147
           isPrivate: false
           description: ""
           sortKey: -1781698751074
